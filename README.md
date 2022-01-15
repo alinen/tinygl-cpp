@@ -44,8 +44,9 @@ $ ./tinygl-example
 
 On Ubuntu, you will need to install openGL, glew and glfw.
 
-* `sudo apt-get install glew`
-* `sudo apt-get install glfw3`
+* `sudo apt-get install libglew-dev`
+* `sudo apt-get install mesa-utils`
+* `sudo apt-get install libglfw3-dev`
 
 To build, open terminal and execute
 

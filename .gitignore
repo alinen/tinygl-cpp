@@ -27,7 +27,6 @@ doxygen-errors.log
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
 *.exe
