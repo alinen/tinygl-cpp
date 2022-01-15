@@ -3,14 +3,7 @@
 
 #include <stdio.h>
 #include <iostream>
-#include <limits>
-#include <memory>
-#include <random>
 #include <cmath>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtx/norm.hpp>
-#include <glm/gtx/quaternion.hpp>
-#include <glm/gtc/epsilon.hpp>
 
 #if ( (defined(__MACH__)) && (defined(__APPLE__)) )
 #define GLFW_INCLUDE_GLCOREARB
@@ -465,12 +458,21 @@ class Window {
   }
 
   /** 
-   * @brief Return the current mouse position (in screen coordinates)
+   * @brief Return the current mouse position X coordinate (in screen coordinates)
    */
-  glm::vec2 mousePosition() const {
+  float mouseX() const {
     double xpos, ypos;
     glfwGetCursorPos(_window, &xpos, &ypos);
-    return glm::vec2(static_cast<float>(xpos), static_cast<float>(ypos));
+    return static_cast<float>(xpos);
+  }
+
+  /** 
+   * @brief Return the current mouse position Y coordinate (in screen coordinates)
+   */
+  float mouseY() const {
+    double xpos, ypos;
+    glfwGetCursorPos(_window, &xpos, &ypos);
+    return static_cast<float>(ypos);
   }
 
   /** 
@@ -545,9 +547,8 @@ class Window {
   }
 
   void onMouseMotion(int x, int y) {
-    glm::vec2 mousePos = mousePosition();
-    int dx = mousePos.x - _lastx;
-    int dy = mousePos.y - _lasty;
+    int dx = mouseX() - _lastx;
+    int dy = mouseY() - _lasty;
     mouseMotion(x, height()-y, dx, -dy);  // user hook
   }
 
