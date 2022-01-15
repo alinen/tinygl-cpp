@@ -2,9 +2,9 @@
 
 Single header, cross-platform openGL framework for drawing 2D squares, circles, and triangles.
 
-[![CMake](https://github.com/alinen/agl/actions/workflows/cmake.yml/badge.svg)](https://github.com/alinen/agl/actions/workflows/cmake.yml)
-[![windows](https://github.com/alinen/agl/actions/workflows/cmake-windows.yml/badge.svg)](https://github.com/alinen/agl/actions/workflows/cmake-windows.yml)
-[![ubuntu](https://github.com/alinen/agl/actions/workflows/cmake-linux.yml/badge.svg)](https://github.com/alinen/agl/actions/workflows/cmake-linux.yml)
+[![CMake](https://github.com/alinen/tinygl-cpp/actions/workflows/cmake.yml/badge.svg)](https://github.com/alinen/agl/actions/workflows/cmake.yml)
+[![windows](https://github.com/alinen/tinygl-cpp/actions/workflows/cmake-windows.yml/badge.svg)](https://github.com/alinen/agl/actions/workflows/cmake-windows.yml)
+[![ubuntu](https://github.com/alinen/tinygl-cpp/actions/workflows/cmake-linux.yml/badge.svg)](https://github.com/alinen/agl/actions/workflows/cmake-linux.yml)
 
 This is a smaller, more lightweight version of my [AGL](https://github.com/alinen/agl) API, which supports a variety of graphics demos. This project supports 
 drawing circles, squares, and triangles using an orthographic projection based on the initial window size. User mouse and keyboard input is also supported.
