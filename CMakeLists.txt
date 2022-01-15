@@ -27,7 +27,7 @@ elseif (APPLE)
   find_library(GLFW glfw)
   add_definitions(-DAPPLE)
 
-  set(INCLUDE_DIRS /System/Library/Frameworks)
+  include_directories(/System/Library/Frameworks /usr/local/include)
   set(CORE ${GLFW} ${GL_LIB})
 
 elseif (UNIX)

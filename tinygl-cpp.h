@@ -68,7 +68,7 @@ static void PrintShaderErrors(GLuint id, const std::string& label)
       free(log);
    }
 }
-static struct Window* theInstance = 0;
+static class Window* theInstance = 0;
 
 /**
  * @brief Manages the window and user input.
