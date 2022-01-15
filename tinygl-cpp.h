@@ -107,7 +107,7 @@ class Window {
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    _window = glfwCreateWindow(_windowWidth, _windowHeight, "AGL Window", 0, 0);
+    _window = glfwCreateWindow(_windowWidth, _windowHeight, "TinyGL C++ Window", 0, 0);
     if (!_window) {
         fprintf(stderr, "ERROR: Cannot initialize GLFW window\n");
         glfwTerminate();
