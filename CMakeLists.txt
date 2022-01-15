@@ -1,4 +1,4 @@
-project(TinyGL-CPP)
+project(tinygl-cpp)
 cmake_minimum_required(VERSION 3.14.0)
 
 if (WIN32) # Include win64 platforms
@@ -14,7 +14,10 @@ if (WIN32) # Include win64 platforms
      /D_CRT_NONSTDC_NO_DEPRECATE 
      /D NOMINMAX /DGLEW_STATIC
      /EHsc")
-  set(CORE ${GLFW} ${GLEW})
+  set(CMAKE_EXE_LINKER_FLAGS "/NODEFAULTLIB:\"MSVCRT\" /NODEFAULTLIB:\"LIBCMT\"")
+  set(CORE ${GLEW} ${GLFW} opengl32.lib)
+  include_directories(external/include)
+  link_directories(external/lib)
 
 elseif (APPLE)
 
