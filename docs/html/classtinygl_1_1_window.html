@@ -111,9 +111,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:adb128363207da12fef063c08486475c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#adb128363207da12fef063c08486475c9">noLoop</a> ()</td></tr>
 <tr class="memdesc:adb128363207da12fef063c08486475c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the main application loop.  <a href="classtinygl_1_1_window.html#adb128363207da12fef063c08486475c9">More...</a><br /></td></tr>
 <tr class="separator:adb128363207da12fef063c08486475c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9248a33017d83bafa1f1f05bb9e72a55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#a9248a33017d83bafa1f1f05bb9e72a55">background</a> (const glm::vec3 &amp;<a class="el" href="classtinygl_1_1_window.html#ad10f179de26379213235eaff248c047b">color</a>)</td></tr>
-<tr class="memdesc:a9248a33017d83bafa1f1f05bb9e72a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the background color.  <a href="classtinygl_1_1_window.html#a9248a33017d83bafa1f1f05bb9e72a55">More...</a><br /></td></tr>
-<tr class="separator:a9248a33017d83bafa1f1f05bb9e72a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dae7d421db26f690ad04bcecb2cc78a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#a2dae7d421db26f690ad04bcecb2cc78a">background</a> (float r, float g, float b)</td></tr>
+<tr class="memdesc:a2dae7d421db26f690ad04bcecb2cc78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the background color.  <a href="classtinygl_1_1_window.html#a2dae7d421db26f690ad04bcecb2cc78a">More...</a><br /></td></tr>
+<tr class="separator:a2dae7d421db26f690ad04bcecb2cc78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0784d475301ac4c7520031c7475921f"><td class="memItemLeft" align="right" valign="top"><a id="af0784d475301ac4c7520031c7475921f"></a>
 GLFWwindow *&#160;</td><td class="memItemRight" valign="bottom"><b>window</b> () const</td></tr>
 <tr class="separator:af0784d475301ac4c7520031c7475921f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,10 +167,14 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a8339cb4c44d1087a1ec26a9daf44eec4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#a8339cb4c44d1087a1ec26a9daf44eec4">mouseIsDown</a> (int button) const</td></tr>
 <tr class="memdesc:a8339cb4c44d1087a1ec26a9daf44eec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query whether the given mouse button is down.  <a href="classtinygl_1_1_window.html#a8339cb4c44d1087a1ec26a9daf44eec4">More...</a><br /></td></tr>
 <tr class="separator:a8339cb4c44d1087a1ec26a9daf44eec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ee59ec4d11f17134e767e2406394ad2"><td class="memItemLeft" align="right" valign="top"><a id="a1ee59ec4d11f17134e767e2406394ad2"></a>
-glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#a1ee59ec4d11f17134e767e2406394ad2">mousePosition</a> () const</td></tr>
-<tr class="memdesc:a1ee59ec4d11f17134e767e2406394ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current mouse position (in screen coordinates) <br /></td></tr>
-<tr class="separator:a1ee59ec4d11f17134e767e2406394ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42ca89c080bbbc4d4e819b78bfb5621d"><td class="memItemLeft" align="right" valign="top"><a id="a42ca89c080bbbc4d4e819b78bfb5621d"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#a42ca89c080bbbc4d4e819b78bfb5621d">mouseX</a> () const</td></tr>
+<tr class="memdesc:a42ca89c080bbbc4d4e819b78bfb5621d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current mouse position X coordinate (in screen coordinates) <br /></td></tr>
+<tr class="separator:a42ca89c080bbbc4d4e819b78bfb5621d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b08515671212f8cff2d49acc4fb8ea0"><td class="memItemLeft" align="right" valign="top"><a id="a2b08515671212f8cff2d49acc4fb8ea0"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#a2b08515671212f8cff2d49acc4fb8ea0">mouseY</a> () const</td></tr>
+<tr class="memdesc:a2b08515671212f8cff2d49acc4fb8ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current mouse position Y coordinate (in screen coordinates) <br /></td></tr>
+<tr class="separator:a2b08515671212f8cff2d49acc4fb8ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6f3f3f82295c78de9ac643b1fe0eebb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#af6f3f3f82295c78de9ac643b1fe0eebb">dt</a> () const</td></tr>
 <tr class="memdesc:af6f3f3f82295c78de9ac643b1fe0eebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amount of time since the previous frame (in seconds)  <a href="classtinygl_1_1_window.html#af6f3f3f82295c78de9ac643b1fe0eebb">More...</a><br /></td></tr>
 <tr class="separator:af6f3f3f82295c78de9ac643b1fe0eebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,7 +193,12 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the window and user input. </p>
-<p>Override this class to create a custom application. </p><pre class="fragment"></pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>Override this class to create a custom application.</p>
+<p>The scene size corresponds to the window width and height. All coordinates are in screen coordinates. Y corresponds to the vertical axis; X corresponds to the horizontal axis. Colors are RGBA, with each component in the range [0,1]</p>
+<p>Override <a class="el" href="classtinygl_1_1_window.html#ad0e7d65b12caa4002d5944346dc9cb18" title="Override this method to perform setup before the main application loop.">setup()</a> to do initialization at the beginning of the application. <a class="el" href="classtinygl_1_1_window.html#ad0e7d65b12caa4002d5944346dc9cb18" title="Override this method to perform setup before the main application loop.">setup()</a> is called once when the application starts.</p>
+<p>Call <a class="el" href="classtinygl_1_1_window.html#aad615de1a625446daaa1b161f17ddc14" title="Draws a circle with the current color in pixel coordinates.">circle()</a>, <a class="el" href="classtinygl_1_1_window.html#a8ae97920d58f67414f7d116cc78cd31b" title="Draws a square with the current color in pixel coordinates.">square()</a>, <a class="el" href="classtinygl_1_1_window.html#a2dae7d421db26f690ad04bcecb2cc78a" title="Set the background color.">background()</a>, etc. in <a class="el" href="classtinygl_1_1_window.html#aee07bd1669ae384631903151d2b455d5" title="Override this method to draw.">draw()</a> to draw different primitives. <a class="el" href="classtinygl_1_1_window.html#aee07bd1669ae384631903151d2b455d5" title="Override this method to draw.">draw()</a> is called once per frame.</p>
+<p>Override <a class="el" href="classtinygl_1_1_window.html#a48e39148e29f4a1e065f573c271dcfaf" title="Override this method to respond to mouse press (button up)">mouseUp()</a>, <a class="el" href="classtinygl_1_1_window.html#a840910ef81b9bd36c22c33f7badb2c34" title="Override this method to respond to mouse press (button down)">mouseDown()</a>, <a class="el" href="classtinygl_1_1_window.html#a647a305b9a3a75ef5e455156647964e6" title="Override this method to respond to key presses (button up)">keyUp()</a>, etc. to respond to inputs Poll input using <a class="el" href="classtinygl_1_1_window.html#a42ca89c080bbbc4d4e819b78bfb5621d" title="Return the current mouse position X coordinate (in screen coordinates)">mouseX()</a>, <a class="el" href="classtinygl_1_1_window.html#a2b08515671212f8cff2d49acc4fb8ea0" title="Return the current mouse position Y coordinate (in screen coordinates)">mouseY()</a>, isKeyDown(), etc.</p>
+<pre class="fragment"></pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a31624172a64320a9cf12818c4949dcc4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31624172a64320a9cf12818c4949dcc4">&#9670;&nbsp;</a></span>Window()</h2>
 
@@ -225,12 +234,20 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<p>Override this class to create a custom application. The default window is sized 500x500 and draws an empty (black) scene. </p><pre class="fragment"></pre> 
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>The screen width (in pixels) </td></tr>
+    <tr><td class="paramname">height</td><td>The screen height (in pixels)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Override this class to create a custom application. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9248a33017d83bafa1f1f05bb9e72a55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9248a33017d83bafa1f1f05bb9e72a55">&#9670;&nbsp;</a></span>background()</h2>
+<a id="a2dae7d421db26f690ad04bcecb2cc78a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dae7d421db26f690ad04bcecb2cc78a">&#9670;&nbsp;</a></span>background()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,9 +258,25 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
         <tr>
           <td class="memname">void tinygl::Window::background </td>
           <td>(</td>
-          <td class="paramtype">const glm::vec3 &amp;&#160;</td>
-          <td class="paramname"><em>color</em></td><td>)</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -856,11 +889,11 @@ mouseIsDown(int) </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dx</td><td>The change in the x direction (in scroll coordinates) </td></tr>
-    <tr><td class="paramname">dy</td><td>The change in the x direction (in scroll coordinates)</td></tr>
+    <tr><td class="paramname">dy</td><td>The change in the x direction (in scroll coordinates) </td></tr>
   </table>
   </dd>
 </dl>
-<pre class="fragment"></pre> 
+
 </div>
 </div>
 <a id="a8ae97920d58f67414f7d116cc78cd31b"></a>

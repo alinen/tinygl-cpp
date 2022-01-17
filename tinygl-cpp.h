@@ -22,7 +22,6 @@ static void error_callback(int error, const char* description) {
   fputs("\n", stderr);
 }
 
-// todo: pass width, height, color, scalex, scaley, position
 const GLchar* vertexShader[] =
 {
 "#version 400\n"
@@ -74,16 +73,31 @@ static class Window* theInstance = 0;
  * @brief Manages the window and user input.
  *
  * Override this class to create a custom application.
- * @verbinclude sphere.cpp
+ *
+ * The scene size corresponds to the window width and height. 
+ * All coordinates are in screen coordinates. 
+ * Y corresponds to the vertical axis; X corresponds to the horizontal axis.
+ * Colors are RGBA, with each component in the range [0,1]
+ *
+ * Override setup() to do initialization at the beginning of the application. 
+ * setup() is called once when the application starts.
+ *
+ * Call circle(), square(), background(), etc. in draw() to draw different primitives. 
+ * draw() is called once per frame.
+ *
+ * Override mouseUp(), mouseDown(), keyUp(), etc. to respond to inputs
+ * Poll input using mouseX(), mouseY(), isKeyDown(), etc. 
+ * 
+ * @verbinclude main.cpp
  */
 class Window {
  public:
   /**
    * @brief Constructor.
+   * @param width The screen width (in pixels)
+   * @param height The screen height (in pixels)
    *
    * Override this class to create a custom application.
-   * The default window is sized 500x500 and draws an empty (black) scene.
-   * @verbinclude empty.cpp
    */
   Window(int width, int height) :
     _windowWidth(width),
@@ -91,7 +105,6 @@ class Window {
     _elapsedTime(0.0),
     _dt(-1.0) {
 
-    // ASN TODO
     theInstance = this;
     glfwSetErrorCallback(error_callback);
 
@@ -137,12 +150,6 @@ class Window {
     glCullFace(GL_BACK);
 
     background(0, 0, 0);
-
-    //vec3 minCorner = center - 0.5f * dim;
-    //vec3 maxCorner = center + 0.5f * dim;
-    //ortho(minCorner.x, maxCorner.x,
-    //      minCorner.y, maxCorner.y,
-    //      minCorner.z, maxCorner.z);
 
     const float triangle[] =
     {
@@ -401,7 +408,6 @@ class Window {
    * @param dx The change in the x direction (in scroll coordinates)
    * @param dy The change in the x direction (in scroll coordinates)
    *
-   * @verbinclude plane.cpp
    */
   virtual void scroll(float dx, float dy) {}
 

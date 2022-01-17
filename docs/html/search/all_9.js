@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['run_18',['run',['../classtinygl_1_1_window.html#a0b6d14293a803c656214545af96b7079',1,'tinygl::Window']]]
+  ['scroll_19',['scroll',['../classtinygl_1_1_window.html#ab00c7d8b19c2aeca8840f818c279f7b2',1,'tinygl::Window']]],
+  ['setup_20',['setup',['../classtinygl_1_1_window.html#ad0e7d65b12caa4002d5944346dc9cb18',1,'tinygl::Window']]],
+  ['square_21',['square',['../classtinygl_1_1_window.html#a8ae97920d58f67414f7d116cc78cd31b',1,'tinygl::Window']]]
 ];

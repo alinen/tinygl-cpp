@@ -23,21 +23,6 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "TinyGL-C++", "index.html", [
-    [ "Getting Started", "start.html", [
-      [ "Setting up scenes", "start.html#start", null ],
-      [ "Using the default camera", "start.html#camera", null ],
-      [ "Responding to events", "start.html#events", null ],
-      [ "Drawing shapes", "start.html#shapes", null ],
-      [ "Using shaders", "start.html#shaders", [
-        [ "The built-in shaders", "start.html#builtinshaders", null ],
-        [ "Custom shaders", "start.html#customshaders", null ]
-      ] ],
-      [ "Textures", "start.html#textures", null ],
-      [ "Common problems", "start.html#troubleshooting", [
-        [ "I have a black screen. What's wrong?", "start.html#blackscreen", null ]
-      ] ],
-      [ "Known issues", "start.html#issues", null ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Members", "functions.html", [
