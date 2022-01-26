@@ -49,7 +49,7 @@ int main() {
 
 # Documentation
 
-All functionality is implemented in the class [Window](https://github.com/alinen/tinygl-cpp/blob/main/tinygl-cpp.h). Just include the header file to use it.
+All functionality is implemented in the class [Window](https://alinen.github.io/tinygl-cpp/html/functions.html). Just include the header file, `#include "tinygl-cpp.h"` to use it.
 
 # Building
 
