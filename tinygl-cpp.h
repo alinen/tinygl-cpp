@@ -1,5 +1,5 @@
-#ifndef spritegl_cpp_H_
-#define spritegl_cpp_H_
+#ifndef tinygl_cpp_H_
+#define tinygl_cpp_H_
 
 #include <stdio.h>
 #include <iostream>
@@ -309,8 +309,17 @@ class Window {
 
  protected:
 
-  /** @name loadSprite command
-  */
+  /** @name Draw commands
+   */
+  ///@{
+
+  /**
+   * @brief Loads a texture to be shown on a sprite
+   * @param name The name tp associate with the texture
+   * @param filename The file containing the texture image
+   *
+   * This function should be called once during `setup()`
+   */
   void loadSprite(const std::string& name, const std::string& filename) {
 
     int w, h, n;
@@ -342,17 +351,21 @@ class Window {
     stbi_image_free(data);
   }
 
-  /** @name Sprite command
-   */
-  ///@{
   /**
    * @brief Draws a sprite with the current color in pixel coordinates
-   * @param name The texture to show on the sprite
+   * @param textureName The texture to show on the sprite. 
    * @param x The horizontal position of the center
    * @param y The vertical position of the center
-   * @param width 
-   * @param height 
+   * @param scale Specify a scale to display the sprite as larger or smaller 
+   *    than the loaded image size. 
    *
+   * Calling this function draws a sprite on the screen at the given (x,y) 
+   * coordinate. The texture name must have been initialized previously 
+   * with a call to `loadSprite` in setup(). The size of the sprite is 
+   * determined by the size of the image. For example, a 32x32 sprite image 
+   * will fill 32x32 pixels on the screen unless it is resized using the scale. 
+   * For example, setting the scale to 0.5 will 
+   * display the sprite as 16x16 pixels, or half as big. 
    */
   void sprite(const std::string& textureName, float x, float y, float scale = 1) {
     
@@ -369,9 +382,6 @@ class Window {
     glDrawArrays(GL_TRIANGLES, 0, 6);
   }
 
-  /** @name Draw commands
-   */
-  ///@{
   /**
    * @brief Draws a square with the current color in pixel coordinates
    * @param x The horizontal position of the center

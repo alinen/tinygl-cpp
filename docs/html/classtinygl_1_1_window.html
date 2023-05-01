@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('classtinygl_1_1_window.html',''); init
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classtinygl_1_1_window-members.html">List of all members</a>  </div>
@@ -118,6 +119,12 @@ Protected Member Functions</h2></td></tr>
 GLFWwindow *&#160;</td><td class="memItemRight" valign="bottom"><b>window</b> () const</td></tr>
 <tr class="separator:af0784d475301ac4c7520031c7475921f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Draw commands</div></td></tr>
+<tr class="memitem:a39dc8eb1e3c80bc1f3db57c6308f0bdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#a39dc8eb1e3c80bc1f3db57c6308f0bdb">loadSprite</a> (const std::string &amp;name, const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a39dc8eb1e3c80bc1f3db57c6308f0bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a texture to be shown on a sprite.  <a href="classtinygl_1_1_window.html#a39dc8eb1e3c80bc1f3db57c6308f0bdb">More...</a><br /></td></tr>
+<tr class="separator:a39dc8eb1e3c80bc1f3db57c6308f0bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f45ed710b75d28a7f8bb3ad4cde8791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#a0f45ed710b75d28a7f8bb3ad4cde8791">sprite</a> (const std::string &amp;textureName, float x, float y, float scale=1)</td></tr>
+<tr class="memdesc:a0f45ed710b75d28a7f8bb3ad4cde8791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a sprite with the current color in pixel coordinates.  <a href="classtinygl_1_1_window.html#a0f45ed710b75d28a7f8bb3ad4cde8791">More...</a><br /></td></tr>
+<tr class="separator:a0f45ed710b75d28a7f8bb3ad4cde8791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ae97920d58f67414f7d116cc78cd31b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygl_1_1_window.html#a8ae97920d58f67414f7d116cc78cd31b">square</a> (float x, float y, float <a class="el" href="classtinygl_1_1_window.html#af76593fe690e716de262365e00084d2c">width</a>, float <a class="el" href="classtinygl_1_1_window.html#a2ee058957ef39e07c69c3024bd89d98f">height</a>)</td></tr>
 <tr class="memdesc:a8ae97920d58f67414f7d116cc78cd31b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a square with the current color in pixel coordinates.  <a href="classtinygl_1_1_window.html#a8ae97920d58f67414f7d116cc78cd31b">More...</a><br /></td></tr>
 <tr class="separator:a8ae97920d58f67414f7d116cc78cd31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -611,6 +618,52 @@ keyIsDown(int) </dd></dl>
 
 </div>
 </div>
+<a id="a39dc8eb1e3c80bc1f3db57c6308f0bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39dc8eb1e3c80bc1f3db57c6308f0bdb">&#9670;&nbsp;</a></span>loadSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tinygl::Window::loadSprite </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads a texture to be shown on a sprite. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name tp associate with the texture </td></tr>
+    <tr><td class="paramname">filename</td><td>The file containing the texture image</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function should be called once during <code><a class="el" href="classtinygl_1_1_window.html#ad0e7d65b12caa4002d5944346dc9cb18" title="Override this method to perform setup before the main application loop.">setup()</a></code> </p>
+
+</div>
+</div>
 <a id="a840910ef81b9bd36c22c33f7badb2c34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a840910ef81b9bd36c22c33f7badb2c34">&#9670;&nbsp;</a></span>mouseDown()</h2>
 
@@ -893,6 +946,66 @@ mouseIsDown(int) </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a0f45ed710b75d28a7f8bb3ad4cde8791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f45ed710b75d28a7f8bb3ad4cde8791">&#9670;&nbsp;</a></span>sprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tinygl::Window::sprite </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>textureName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws a sprite with the current color in pixel coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textureName</td><td>The texture to show on the sprite. </td></tr>
+    <tr><td class="paramname">x</td><td>The horizontal position of the center </td></tr>
+    <tr><td class="paramname">y</td><td>The vertical position of the center </td></tr>
+    <tr><td class="paramname">scale</td><td>Specify a scale to display the sprite as larger or smaller than the loaded image size.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Calling this function draws a sprite on the screen at the given (x,y) coordinate. The texture name must have been initialized previously with a call to <code>loadSprite</code> in <a class="el" href="classtinygl_1_1_window.html#ad0e7d65b12caa4002d5944346dc9cb18" title="Override this method to perform setup before the main application loop.">setup()</a>. The size of the sprite is determined by the size of the image. For example, a 32x32 sprite image will fill 32x32 pixels on the screen unless it is resized using the scale. For example, setting the scale to 0.5 will display the sprite as 16x16 pixels, or half as big. </p>
 
 </div>
 </div>

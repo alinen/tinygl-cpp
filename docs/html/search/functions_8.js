@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['run_44',['run',['../classtinygl_1_1_window.html#a0b6d14293a803c656214545af96b7079',1,'tinygl::Window']]]
+  ['noloop_46',['noLoop',['../classtinygl_1_1_window.html#adb128363207da12fef063c08486475c9',1,'tinygl::Window']]]
 ];
