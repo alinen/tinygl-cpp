@@ -1,5 +1,4 @@
 #include "tinygl-cpp.h"
-#include <vector>
 
 using namespace tinygl;
 class MyWindow : public Window {
