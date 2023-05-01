@@ -13,9 +13,8 @@ class MyWindow : public Window {
       background(0.2f, 0.2f, 0.2f); // parameters: r, g, b
 
       color(0.5, 1.0, 0.25);   // parameters: r, g, b
-      circle(50, 30, 100); // parameters: x, y, radius
-      circle(50, 30, 100); // parameters: x, y, radius
       square(300, 150, 200, 50); // parameters: x, y, width, height
+      circle(50, 30, 100); // parameters: x, y, radius
 
       color(1, 0, 0, 0.5);
       triangle(350, 150, 50, 100);

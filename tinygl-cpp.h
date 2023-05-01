@@ -1,8 +1,10 @@
-#ifndef tinygl_cpp_H_
-#define tinygl_cpp_H_
+#ifndef spritegl_cpp_H_
+#define spritegl_cpp_H_
 
 #include <stdio.h>
 #include <iostream>
+#include <vector>
+#include <map>
 #include <cmath>
 
 #if ( (defined(__MACH__)) && (defined(__APPLE__)) )
@@ -13,6 +15,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #endif
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb/stb_image.h"
 
 namespace tinygl {
 
@@ -31,9 +35,11 @@ const GLchar* vertexShader[] =
 "uniform float inScreenWidth;"
 "uniform float inScreenHeight;"
 "in vec3 VertexPosition;"
+"out vec2 uv;"
 "out vec4 color;"
 "void main() {"
 "  color = inColor;"
+"  uv = (VertexPosition + 0.5).xy;"
 "  vec4 x = vec4(2.0 / inScreenWidth, 0.0, 0.0, 0.0);"
 "  vec4 y = vec4(0.0, 2.0 / inScreenHeight, 0.0, 0.0);"
 "  vec4 z = vec4(0.0, 0.0, -2.0 / 2000, 0.0);"
@@ -47,9 +53,11 @@ const GLchar* vertexShader[] =
 const GLchar* fragmentShader[] =
 {
 "#version 400\n"
+"uniform sampler2D inImage;"
 "in vec4 color;"
+"in vec2 uv;"
 "out vec4 FragColor;"
-"void main() { FragColor = color; }"
+"void main() { FragColor = color * texture(inImage, uv); }"
 };
 
 
@@ -180,6 +188,20 @@ class Window {
       circle[i*3+2] = 0;
     }
 
+    // default texture
+    glEnable(GL_TEXTURE0);
+    glActiveTexture(GL_TEXTURE0);
+    GLuint texId;
+    glGenTextures(1, &texId);
+    _textures["default"] = Texture{texId, 1, 1};
+    unsigned char default[4] = { 255,255,255,255 };
+    glBindTexture(GL_TEXTURE_2D, texId);
+    glTexStorage2D(GL_TEXTURE_2D, 1, GL_RGBA8, 1, 1);
+    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, 1, 1,
+      GL_RGBA, GL_UNSIGNED_BYTE, default);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
     GLuint vboId;
     glGenBuffers(1, &vboId);
     glBindBuffer(GL_ARRAY_BUFFER, vboId);
@@ -251,6 +273,9 @@ class Window {
 
     GLuint heightUniform = glGetUniformLocation(shaderId, "inScreenHeight");
     glUniform1f(heightUniform, _windowHeight);
+
+    _imageUniform = glGetUniformLocation(shaderId, "inImage");
+    glUniform1i(_imageUniform, 0); // texture slot 0
   }
 
   virtual ~Window() {
@@ -284,6 +309,66 @@ class Window {
 
  protected:
 
+  /** @name loadSprite command
+  */
+  void loadSprite(const std::string& name, const std::string& filename) {
+
+    int w, h, n;
+    unsigned char* data = stbi_load(filename.c_str(), &w, &h, &n, 4);
+
+    if (!data) {
+      std::cout << "ERROR: Cannot load texture " << filename<< std::endl; 
+      return;
+    }
+
+    glEnable(GL_TEXTURE0);
+    glActiveTexture(GL_TEXTURE0);
+
+    GLuint texId;
+    if (_textures.count(name) == 0) {
+      glGenTextures(1, &texId);
+      _textures[name] = Texture{texId, w, h};
+    } else {
+      texId = _textures[name].texId;
+    }
+
+    glBindTexture(GL_TEXTURE_2D, texId);
+    glTexStorage2D(GL_TEXTURE_2D, 1, GL_RGBA8, w, h);
+    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, w, h,
+        GL_RGBA, GL_UNSIGNED_BYTE, data);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    stbi_image_free(data);
+  }
+
+  /** @name Sprite command
+   */
+  ///@{
+  /**
+   * @brief Draws a sprite with the current color in pixel coordinates
+   * @param name The texture to show on the sprite
+   * @param x The horizontal position of the center
+   * @param y The vertical position of the center
+   * @param width 
+   * @param height 
+   *
+   */
+  void sprite(const std::string& textureName, float x, float y, float scale = 1) {
+    
+    assert(_textures.count(textureName) > 0);
+
+    Texture& tex = _textures[textureName];
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, tex.texId);
+
+    glUniform1i(_imageUniform, 0);
+    glUniform3f(_posUniform, x, y, 0);
+    glUniform3f(_sizeUniform, tex.width*scale, tex.height*scale, 1);
+    glBindVertexArray(_squareVao);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+  }
+
   /** @name Draw commands
    */
   ///@{
@@ -296,7 +381,10 @@ class Window {
    *
    */
   void square(float x, float y, float width, float height) {
-    glUniform3f(_posUniform, x, y, 10);
+    Texture& tex = _textures["default"];
+    glBindTexture(GL_TEXTURE_2D, tex.texId);
+    
+    glUniform3f(_posUniform, x, y, 0);
     glUniform3f(_sizeUniform, width, height, 1);
     glBindVertexArray(_squareVao);
     glDrawArrays(GL_TRIANGLES, 0, 6);
@@ -311,6 +399,8 @@ class Window {
    *
    */
   void triangle(int x, int y, float width, float height) {
+    Texture& tex = _textures["default"];
+    glBindTexture(GL_TEXTURE_2D, tex.texId);
     glUniform3f(_posUniform, x, y, 0);
     glUniform3f(_sizeUniform, width, height, 1);
     glBindVertexArray(_triVao);
@@ -337,6 +427,8 @@ class Window {
    *
    */
   void ellipsoid(int x, int y, float width, float height) {
+    Texture& tex = _textures["default"];
+    glBindTexture(GL_TEXTURE_2D, tex.texId);
     glUniform3f(_posUniform, x, y, 0);
     glUniform3f(_sizeUniform, width, height, 1);
     glBindVertexArray(_circleVao);
@@ -592,8 +684,16 @@ class Window {
   float _lastx, _lasty;
   struct GLFWwindow* _window = 0;
   GLuint _triVao, _squareVao, _circleVao;
-  GLuint _colorUniform, _sizeUniform, _posUniform;
+  GLuint _colorUniform, _sizeUniform, _posUniform, _imageUniform;
   const int numTris = 16; // for circles
+
+  // textures
+  struct Texture {
+    GLuint texId;
+    int width;
+    int height;
+  };
+  std::map<std::string, Texture> _textures;
 
  protected:
   inline GLFWwindow* window() const { return _window; }

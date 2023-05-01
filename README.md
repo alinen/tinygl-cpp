@@ -1,6 +1,6 @@
 # tinygl-cpp
 
-Single header, cross-platform openGL framework for drawing 2D squares, circles, and triangles.
+Single header, cross-platform openGL framework for drawing 2D squares, circles, triangles, and sprites.
 
 [![CMake](https://github.com/alinen/tinygl-cpp/actions/workflows/cmake.yml/badge.svg)](https://github.com/alinen/agl/actions/workflows/cmake.yml)
 [![windows](https://github.com/alinen/tinygl-cpp/actions/workflows/cmake-windows.yml/badge.svg)](https://github.com/alinen/agl/actions/workflows/cmake-windows.yml)

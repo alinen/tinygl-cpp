@@ -1,5 +1,5 @@
-project(tinygl-cpp)
 cmake_minimum_required(VERSION 3.14.0)
+project(tinygl-cpp)
 
 if (WIN32) # Include win64 platforms
 
@@ -46,5 +46,8 @@ elseif (UNIX)
 
 endif()
 
-add_executable(tinygl-example main.cpp)
-target_link_libraries(tinygl-example ${CORE})
+add_executable(tinygl-shapes shapes.cpp)
+target_link_libraries(tinygl-shapes ${CORE})
+
+add_executable(tinygl-sprites sprites.cpp)
+target_link_libraries(tinygl-sprites ${CORE})
