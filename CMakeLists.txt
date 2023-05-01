@@ -27,7 +27,7 @@ elseif (APPLE)
   find_library(GLFW glfw)
   add_definitions(-DAPPLE)
 
-  include_directories(/System/Library/Frameworks /usr/local/include)
+  include_directories(/System/Library/Frameworks /usr/local/include external/include)
   set(CORE ${GLFW} ${GL_LIB})
 
 elseif (UNIX)
@@ -36,6 +36,7 @@ elseif (UNIX)
   FIND_PACKAGE(OpenGL REQUIRED) 
   FIND_PACKAGE(GLEW REQUIRED)
 
+  include_directories(external/include)
   set(LIBRARY_DIRS
     /usr/X11R6/lib
     /usr/local/lib

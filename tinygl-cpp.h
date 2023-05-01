@@ -194,11 +194,11 @@ class Window {
     GLuint texId;
     glGenTextures(1, &texId);
     _textures["default"] = Texture{texId, 1, 1};
-    unsigned char default[4] = { 255,255,255,255 };
+    unsigned char defaultTex[4] = { 255,255,255,255 };
     glBindTexture(GL_TEXTURE_2D, texId);
     glTexStorage2D(GL_TEXTURE_2D, 1, GL_RGBA8, 1, 1);
     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, 1, 1,
-      GL_RGBA, GL_UNSIGNED_BYTE, default);
+      GL_RGBA, GL_UNSIGNED_BYTE, defaultTex);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
